@@ -1,0 +1,90 @@
+<% content_for :features, "profile-page" %>
+<% content_for :class, "profile-page" %>
+<div class="wrapper">
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row">
+          <p>&nbsp;</p>
+        </div>
+        <div class="row">
+          <p>&nbsp;</p>
+        </div>
+        <div class="row">
+          <div class="profile">
+            <div class="name">
+              <h3 class="title">Dashboard Page</h3>
+              <h6>RESTful API Stats</h6>
+            </div>
+          </div>
+        </div>
+        <div class="description text-center">
+          <p>Total number of Users, Questions, and Answers in the system, as well as Tenant API request counts for all Tenants</p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="profile-tabs">
+              <div class="nav-align-center">
+                <ul class="nav nav-pills" role="tablist">
+                  <li class="active">
+                    <a>
+                      <i class="material-icons">face</i>
+                      Users
+                      <br/>
+                      <%= @total_users %>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a>
+                      <i class="material-icons">help</i>
+                      Questions
+                      <br/>
+                      <%= @total_questions %>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a>
+                      <i class="material-icons">lightbulb_outline</i>
+                      Answers
+                      <br/>
+                      <%= @total_answers %>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a>
+                      <i class="material-icons">compare_arrows</i>
+                      Requests
+                      <br/>
+                      <%= @total_requests %>
+                    </a>
+                  </li>
+                </ul>
+                <div class="row">
+                  <p>&nbsp;</p>
+                </div>
+                <div class="tab-content">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th>Tenant Name</th>
+                      <th class="text-center">Total Requests</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @tenants.each do |tenant| %>
+                        <tr>
+                          <td class="text-left"><%= tenant[0] %></td>
+                          <td class="text-center"><%= tenant[1] %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

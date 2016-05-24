@@ -40,7 +40,13 @@ To make sure it's all working,
 
 `rails s`
 
+Please install `redis` (for throttling support)
+
 You should see this same information.
+
+## Sample request
+
+`curl --request GET 'http://localhost:3000/api/v1/questions?token=10ded59ed67c46e8a7fba92f4734b79f'`
 
 ## Submitting your project
 
